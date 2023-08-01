@@ -70,7 +70,6 @@ background-color: rgb(115, 115, 194);
     box-shadow: 5px 5px 10px rgba(0,0,0,0.7);
 }
 .square{
-
     background-color: rgb(16, 197, 31);
     aspect-ratio: 1/1;
     font-size: 25px;
@@ -79,6 +78,9 @@ background-color: rgb(115, 115, 194);
     text-align: center;
     margin: 5px;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .square:hover{
     background-color: black;
