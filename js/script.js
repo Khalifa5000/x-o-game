@@ -37,6 +37,21 @@ if (squares[1]==squares[2] && squares[2]==squares[3] && squares[1]!=''){
     end(1,4,7); 
 } else if (squares[3]==squares[6] && squares[6]==squares[9] && squares[3]!=''){
     end(3,6,9);
+} else{
+    if(squares[1]!="" && squares[2]!="" && squares[3]!="" 
+    && squares[4]!="" && squares[5]!="" && squares[6]!="" 
+    && squares[7]!="" && squares[8]!="" && squares[9]!=""){
+    title.innerHTML = `Match has been drawn`;
+    setTimeout(function(){
+        alert ( `Match has been drawn`);
+       }, 200);
+    setInterval(function(){
+        title.innerHTML +='.'
+    }, 1000);
+    setTimeout(function(){
+        location.reload()
+    }, 2000)
+    }
 }
 } 
 
