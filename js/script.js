@@ -5,9 +5,9 @@ function end (num1,num2,num3){
     document.getElementById('item-'+num1).style.background="#000";
     document.getElementById('item-'+num2).style.background="#000";
     document.getElementById('item-'+num3).style.background="#000";
-    title.innerHTML = `${squares[num1]} winner`;
+    title.innerHTML = `${squares[num1]} is the winner`;
     setTimeout(function(){
-        alert ( `${squares[num1]} won`);
+        alert ( `${squares[num1]} is the winner`);
        }, 200);
     setInterval(function(){
         title.innerHTML +='.'
@@ -60,13 +60,15 @@ function game (id){
     if (turn === 'x' && element.innerHTML ==''){
         element.innerHTML = 'X';
         turn = 'o';
-        title.innerHTML ="O Round";
+        title.innerHTML ="O Turn";
     }else if (turn === 'o' && element.innerHTML == '') {
         element.innerHTML= 'O';
         turn = 'x';
-        title.innerHTML="X Round";
+        title.innerHTML="X Turn";
     }
     winner();   
 }
-
+document.querySelector("button").onclick = ()=>{
+    window.location.reload()
+}
 
