@@ -1,20 +1,21 @@
 let turn = "x";
 let title = document.querySelector(".title-content")
 let squares = [];
+
+const resultBox = document.querySelector(".result-box");
+const wonText = resultBox.querySelector(".won-text");
+const replayBtn = resultBox.querySelector("button");
+
+
 function end (num1,num2,num3){
     document.getElementById('item-'+num1).style.background="#000";
     document.getElementById('item-'+num2).style.background="#000";
     document.getElementById('item-'+num3).style.background="#000";
     title.innerHTML = `${squares[num1]} is the winner`;
     setTimeout(function(){
-        alert ( `${squares[num1]} is the winner`);
+        resultBox.classList.add("show");
+        wonText.innerHTML = `Player <p>${squares[num1]}</p> won the game!`;  
        }, 200);
-    setInterval(function(){
-        title.innerHTML +='.'
-    }, 1000);
-    setTimeout(function(){
-        location.reload()
-    }, 2000)
 }
 
 function winner(){
@@ -41,18 +42,13 @@ if (squares[1]==squares[2] && squares[2]==squares[3] && squares[1]!=''){
     if(squares[1]!="" && squares[2]!="" && squares[3]!="" 
     && squares[4]!="" && squares[5]!="" && squares[6]!="" 
     && squares[7]!="" && squares[8]!="" && squares[9]!=""){
-    title.innerHTML = `Match has been drawn`;
+    title.innerHTML = `Match has been drawn!`;
     setTimeout(function(){
-        alert ( `Match has been drawn`);
-       }, 200);
-    setInterval(function(){
-        title.innerHTML +='.'
-    }, 1000);
-    setTimeout(function(){
-        location.reload()
-    }, 2000)
-    }
-}
+        resultBox.classList.add("show");
+        wonText.innerHTML = `Match has been drawn!`;   
+       }, 200);   
+   }
+ }
 } 
 
 function game (id){
@@ -68,7 +64,10 @@ function game (id){
     }
     winner();   
 }
-document.querySelector("button").onclick = ()=>{
+document.querySelectorAll("button").onclick = ()=>{
+    window.location.reload()
+}
+replayBtn.onclick=()=>{
     window.location.reload()
 }
 
