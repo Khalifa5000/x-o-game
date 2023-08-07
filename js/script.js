@@ -5,7 +5,8 @@ let squares = [];
 const resultBox = document.querySelector(".result-box");
 const wonText = resultBox.querySelector(".won-text");
 const replayBtn = resultBox.querySelector("button");
-const container = document.querySelector(".container")
+const btn = document.querySelector(".container button")
+const content = document.querySelector(".content")
 
 
 function end (num1,num2,num3){
@@ -14,7 +15,8 @@ function end (num1,num2,num3){
     document.getElementById('item-'+num3).style.background="#000";
     title.innerHTML = `${squares[num1]} is the winner`;
     setTimeout(function(){
-        container.style.display="none";
+        content.style.opacity="0";
+        btn.style.opacity="0";
         resultBox.classList.add("show");
         wonText.innerHTML = `Player <p>${squares[num1]}</p> won the game!`;  
        }, 200);
@@ -46,7 +48,8 @@ if (squares[1]==squares[2] && squares[2]==squares[3] && squares[1]!=''){
     && squares[7]!="" && squares[8]!="" && squares[9]!=""){
     title.innerHTML = `Match has been drawn!`;
     setTimeout(function(){
-        container.style.display="none";
+        content.style.opacity="0";
+        btn.style.opacity="0";
         resultBox.classList.add("show");
         wonText.innerHTML = `Match has been drawn!`;   
        }, 200);   
@@ -67,7 +70,7 @@ function game (id){
     }
     winner();   
 }
-document.querySelector("button").onclick = ()=>{
+    btn.onclick = ()=>{
     window.location.reload()
 }
 replayBtn.onclick=()=>{
