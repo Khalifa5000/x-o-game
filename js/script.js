@@ -18,7 +18,7 @@ function end (num1,num2,num3){
         content.style.opacity="0";
         btn.style.opacity="0";
         resultBox.classList.add("show");
-        wonText.innerHTML = `Player <p>${squares[num1]}</p> won the game!`;  
+        wonText.innerHTML = `Player ( <p>${squares[num1]}</p> ) won the game!`;  
        }, 200);
 }
 

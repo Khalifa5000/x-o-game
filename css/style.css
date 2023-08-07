@@ -148,7 +148,10 @@ button{
   }
   .result-box  .won-text p{
     font-weight: 700;
-    margin: 0 3px;
+    font-size: 30px;
+    margin: 0 5px;
+    color: #fff;
+
   }
   .result-box .btn{
     display: flex ;
